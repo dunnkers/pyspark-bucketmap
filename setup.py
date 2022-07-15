@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     setup(
         name="pyspark-bucketmap",
         version="0.0.1",
-        packages=find_packages(include=["pyspark_bucketmap"]),
+        packages=find_packages(include=["."]),
         description="Easily group pyspark data into buckets and map them to different values.",
         keywords="",
         long_description=LONG_DESC,
