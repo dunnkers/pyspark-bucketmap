@@ -6,8 +6,9 @@ with open("README.md", "r") as fh:
     LONG_DESC = fh.read()
     setup(
         name="pyspark-bucketmap",
-        version="0.0.1",
-        packages=find_packages(include=["."]),
+        version="0.0.3",
+        py_modules=['pyspark_bucketmap'],
+        scripts=['pyspark_bucketmap.py'],
         description="Easily group pyspark data into buckets and map them to different values.",
         keywords="",
         long_description=LONG_DESC,
