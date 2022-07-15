@@ -1,2 +1,2 @@
-pyspark==3.3.0
-overrides==6.1.0
+pyspark>=1.4.0
+overrides>=4.0.0

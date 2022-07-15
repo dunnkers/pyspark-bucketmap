@@ -25,8 +25,5 @@
 	},
 	
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install -r .devcontainer/requirements.txt && pip install -r .devcontainer/requirements-dev.txt",
-
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
+	"postCreateCommand": "pip install -r .devcontainer/requirements-dev.txt"
 }
