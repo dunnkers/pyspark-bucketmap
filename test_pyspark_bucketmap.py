@@ -10,11 +10,11 @@ from pyspark.sql import SparkSession
 
 @pytest.fixture
 def spark() -> SparkSession:
-    conf = (
+    conf: SparkConf = (
         SparkConf()
         .setMaster("local[*]")
         .setAppName("testing")
-        .set("spark.sql.shuffle.partitions", 1)
+        .set("spark.sql.shuffle.partitions", "1")
     )
     spark: SparkSession = SparkSession.builder.config(conf=conf).getOrCreate()
     return spark

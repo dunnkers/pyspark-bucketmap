@@ -1,24 +1,18 @@
 from overrides import overrides
 from pyspark.ml.feature import Bucketizer
-from pyspark.ml.param import Param, Params
 from pyspark.sql import DataFrame
-from typing import Dict, Optional, Any, List
+from typing import Dict, Optional, Any
 from pyspark.sql import functions as sf
 from pyspark.sql.column import Column
 from itertools import chain
 
 
 class BucketMap(Bucketizer):
-    # mapping: Param[Dict[int, Column]] = Param(
-    #     Params._dummy(),
-    #     "mapping",
-    #     "Mappings between buckets and new column values.",
-    # )
     mapping: Dict[int, Column]
 
     def __init__(self, mapping: Dict[int, Column], *args, **kwargs):
         super(BucketMap, self).__init__(*args, **kwargs)
-        
+
         n_splits: int = len(self.getSplits())
         n_buckets: int = n_splits - 1
         n_mappings: int = len(mapping)
@@ -28,20 +22,7 @@ class BucketMap(Bucketizer):
             + f"{n_buckets} mappings expected but {n_mappings} were given.)"
         )
 
-        # self._set(mapping=mapping)
         self.mapping = mapping
-
-    # def setMapping(self, mapping: Dict[int, Column]) -> "Bucketizer":
-    #     """
-    #     Sets the value of :py:attr:`mapping`.
-    #     """
-    #     return self._set(mapping=mapping)
-
-    # def getMapping(self) -> Dict[int, Column]:
-    #     """
-    #     Gets the mapping value or its default value.
-    #     """
-    #     return self.getOrDefault(self.mapping)
 
     @overrides
     def transform(self, dataset: DataFrame, params: Optional[Any] = None) -> DataFrame:
@@ -50,7 +31,6 @@ class BucketMap(Bucketizer):
         buckets: Column = bucketed[self.getOutputCol()]
 
         # Map buckets to their desired values
-        # mapping: Dict[int, Column] = self.getMapping()
         mapping: Dict[int, Column] = self.mapping
         range_map: chain = chain(*mapping.items())
         range_mapper: Column = sf.create_map([sf.lit(x) for x in range_map])
