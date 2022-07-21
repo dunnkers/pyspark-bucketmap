@@ -3,3 +3,4 @@ mypy==0.961
 black==22.6.0
 ipykernel==6.15.1
 pandas==1.4.3
+plotly-express==0.4.1
