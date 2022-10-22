@@ -7,4 +7,4 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 
 # Install Git
-RUN apt-get install git -y
+RUN apt-get update && apt-get install git -y
