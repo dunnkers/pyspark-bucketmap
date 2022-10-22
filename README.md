@@ -83,7 +83,7 @@ Success!
 
 Module `pyspark_bucketmap`:
 
-```
+```python
 from pyspark.ml.feature import Bucketizer
 from pyspark.sql import DataFrame
 from pyspark.sql.column import Column
@@ -131,7 +131,7 @@ Now you should have a fully working dev environment working 🙌🏻. You can ru
 ### Option B: installing the dependencies manually
 Clone the repo and install the deps:
 
-```
+```shell
 git clone https://github.com/dunnkers/pyspark-bucketmap.git
 cd pyspark-bucketmap
 pip install -r .devcontainer/requirements.txt
@@ -145,7 +145,7 @@ Make sure you also have the following installed:
 
 Now, you should be able to run tests 🧪:
 
-```
+```shell
 pytest .
 ```
 
