@@ -79,6 +79,25 @@ Success!
 
 ✨
 
+## API
+
+Module `pyspark_bucketmap`:
+
+```
+from pyspark.ml.feature import Bucketizer
+from pyspark.sql import DataFrame
+from pyspark.sql.column import Column
+
+class BucketMap(Bucketizer):
+    mapping: Dict[int, Column]
+
+    def __init__(self, mapping: Dict[int, Column], *args, **kwargs):
+        ...
+
+    def transform(self, dataset: DataFrame, params: Optional[Any] = None) -> DataFrame:
+        ...
+```
+
 ## Contributing
 Under the hood, uses a combination of pyspark's `Bucketizer` and `pyspark.sql.functions.create_map`. The code is 42 lines and exists 1 in file: `pyspark_bucketmap.py`. To contribute, follow your preferred setup option below.
 
