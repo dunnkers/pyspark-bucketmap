@@ -102,7 +102,7 @@ class BucketMap(Bucketizer):
 Under the hood, uses a combination of pyspark's `Bucketizer` and `pyspark.sql.functions.create_map`. The code is 42 lines and exists 1 in file: `pyspark_bucketmap.py`. To contribute, follow your preferred setup option below.
 
 ## Option A: using a Devcontainer (VSCode only)
-If you happen to use VSCode as your editor, you can open `fseval` in a [**Devcontainer**](https://code.visualstudio.com/docs/remote/containers). Devcontainers allow you to develop _inside_ a Docker container - which means all dependencies and packages are automatically set up for you. First, make sure you have the [Remote Development extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) installed.
+If you happen to use VSCode as your editor, you can open `pyspark-bucketmap` in a [**Devcontainer**](https://code.visualstudio.com/docs/remote/containers). Devcontainers allow you to develop _inside_ a Docker container - which means all dependencies and packages are automatically set up for you. First, make sure you have the [Remote Development extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) installed.
 
 
 Then, you can do two things.
